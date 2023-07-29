@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "discord.js": "^14.11.0",
+    "nodemon": "^3.0.1"
+  },
+  "name": "sentaku",
+  "version": "1.0.0",
+  "description": "bot",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "dumprr",
+  "license": "ISC"
+}
