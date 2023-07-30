@@ -39,7 +39,7 @@ module.exports = {
         .setTitle(`${title}`)
         .setDescription(`${body}`)
         .setColor(pickedColor)
-        .setColor("")
+        .setColor(pickedColor)
 		return interaction.reply({ embeds: [CustomEmbed] });
 	},
 };
