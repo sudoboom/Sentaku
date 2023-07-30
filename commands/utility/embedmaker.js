@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, AttachmentBuilder, EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder, AttachmentBuilder, EmbedBuilder, PermissionsBitField } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -32,7 +32,9 @@ module.exports = {
                 { name: "random", value: 'Random' }
             )),
 	async execute(interaction) {
-        const title = interaction.options.getString('title')
+       try { if (interaction.member.permissions.has(PermissionsBitField.Flags.ManageServer)) {
+            console.log('This member can Manage Server'); }
+            const title = interaction.options.getString('title')
         const body = interaction.options.getString('description')
         const pickedColor = interaction.options.getString('color')
 		const CustomEmbed = new EmbedBuilder() 
@@ -40,6 +42,10 @@ module.exports = {
         .setDescription(`${body}`)
         .setColor(pickedColor)
         .setColor(pickedColor)
-		return interaction.reply({ embeds: [CustomEmbed] });
-	},
-};
+		return interaction.reply({ embeds: [CustomEmbed] })
+        } catch (error) {
+            {
+            await interaction.reply({ content: "You cannot run this command!", ephemeral: true }) 
+            }
+	}
+},}
