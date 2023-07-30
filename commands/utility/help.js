@@ -8,6 +8,10 @@ module.exports = {
 		// interaction.user is the object representing the User who ran the command
 		// interaction.member is the GuildMember object, which represents the user in the specific guild
 		const HelpEmbed = new EmbedBuilder()
+		.setAuthor({
+			url: `https://github.com/dumprr/Sentaku`,
+			name: dumprr/Sentaku 
+		})
 		.setColor('Orange')
 		.setTitle('Commands List')
 		.addFields(
@@ -21,6 +25,10 @@ module.exports = {
 			{name: "Attributions", value: `Base code for commands thanks to Discordjs.guide`},
 			{name: "Attributions", value: `Based off of dumprr/Sentaku git repo`}
 		)
+	    .setFooter({
+			text: `Requested by: ${interaction.user.tag}`,
+			iconURL: interaction.user.avatarURL(),
+		  })
 		await interaction.reply({ embeds: [HelpEmbed] });
 	},
 };

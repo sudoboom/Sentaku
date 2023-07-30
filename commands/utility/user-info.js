@@ -15,6 +15,10 @@ module.exports = {
 
 		if (user) { const EmbedThing = new EmbedBuilder()
 			// const RequestedImage = user.displayAvatarURL
+			.setAuthor({
+				url: `https://github.com/dumprr/Sentaku`,
+				name: dumprr/Sentaku 
+			})
 	.setTitle(`User Info For ${user.username}`)
 	.setDescription(`They joined the server on ${member.joinedAt}`)
 	if (user.avatarURL() != null ) {
