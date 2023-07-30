@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, AttachmentBuilder } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -6,6 +6,21 @@ module.exports = {
 		.setDescription('Provides information about the server.'),
 	async execute(interaction) {
 		// interaction.guild is the object representing the Guild in which the command was run
-		await interaction.reply(`This server is ${interaction.guild.name} and has ${interaction.guild.memberCount} members.`);
+		
+		const ServerEmbed =  new EmbedBuilder()
+		.setTitle(`Server Info for ${interaction.guild.name}`)
+		.setDescription(`This server has ${interaction.guild.memberCount} members.\nOwner: <@${interaction.guild.ownerId}>`)
+		if ( interaction.guild.iconURL() == null ) {
+		ServerEmbed.addFields(
+			{name: 'This server has no icon.', value: `The icon shows: "${interaction.guild.nameAcronym}"`}
+		)
+		}
+		ServerEmbed.setFooter( {
+			text: `Requested by ${interaction.user.username}`
+		})
+		if ( interaction.guild.iconURL() != null ) {
+		ServerEmbed.setThumbnail(`${interaction.guild.iconURL()}`)
+		}
+		await interaction.reply({ embeds: [ServerEmbed] });
 	},
 };

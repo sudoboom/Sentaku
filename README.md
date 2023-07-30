@@ -1,14 +1,13 @@
 # Sentaku
 ## A basic bot made in Discord.js. Contains some basic commands
-### If you use Sentaku, all I ask is that you attribute credit somewhere in the bot.
+### If you use Sentaku, you must credit it as the open source base.
 ---
 # Bugs / To Add
--  Cannot provide "joinedAt" for .getUser on /user-info (target)
--  Cannot provide target avatar on /user-info command (Will fix)
+-  All fixed! Report any bugs in issues.
 ---
 # How To Set-up
 1. Go into your IDE and clone this git repository
-2. Install discord.js v14. If you want, you can also install Nodemon
+2. Install discord.js v14. If you want, you can also install Nodemon. You can do this by just typing `npm install`
 3. Go to [Discord Developer Portal](https://discord.com/developers/applications) and make a new application. Click on bot, then click on OAuth2 and select "bot".
 4. Add the necessary permissions to your bot in the OAuth2 section and add it to your server.
 5. Create a file named "config.json" in the same directory as index.js and put these values in the file:
