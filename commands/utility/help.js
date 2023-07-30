@@ -10,7 +10,7 @@ module.exports = {
 		const HelpEmbed = new EmbedBuilder()
 		.setAuthor({
 			url: `https://github.com/dumprr/Sentaku`,
-			name: dumprr/Sentaku 
+			name: 'dumprr/Sentaku '
 		})
 		.setColor('Orange')
 		.setTitle('Commands List')

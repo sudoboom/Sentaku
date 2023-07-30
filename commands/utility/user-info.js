@@ -17,7 +17,7 @@ module.exports = {
 			// const RequestedImage = user.displayAvatarURL
 			.setAuthor({
 				url: `https://github.com/dumprr/Sentaku`,
-				name: dumprr/Sentaku 
+				name: 'dumprr/Sentaku '
 			})
 	.setTitle(`User Info For ${user.username}`)
 	.setDescription(`They joined the server on ${member.joinedAt}`)
@@ -35,6 +35,10 @@ module.exports = {
 	  
 		 await interaction.reply({ embeds: [EmbedThing] });
 		} else { const SelfEmbed = new EmbedBuilder()
+			.setAuthor({
+				url: `https://github.com/dumprr/Sentaku`,
+				name: 'dumprr/Sentaku '
+			})
 	.setTitle(`User Info For ${interaction.user.username}`)
 	.setDescription(`They joined the server on ${interaction.member.joinedAt}`)
 	if (interaction.user.avatarURL() != null ) {

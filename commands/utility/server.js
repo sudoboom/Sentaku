@@ -11,7 +11,7 @@ module.exports = {
 		.setColor('Aqua')
 		.setAuthor({
 			url: `https://github.com/dumprr/Sentaku`,
-			name: dumprr/Sentaku 
+			name: 'dumprr/Sentaku'
 		})
 		.setTitle(`Server Info for ${interaction.guild.name}`)
 		.setDescription(`This server has ${interaction.guild.memberCount} members.\nOwner: <@${interaction.guild.ownerId}>`)
