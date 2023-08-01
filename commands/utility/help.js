@@ -15,6 +15,7 @@ module.exports = {
 		.setColor('Orange')
 		.setTitle('Commands List')
 		.addFields(
+			{name: "---------------------------------------------------------", value: `\n----------------------------------------------------------`, },
 			{name: "/avatar", value: "Fetches user's avatar, either their own or someone else's 🖼️", inline: true},
 			{name: "/ping", value: "Gets the ping of the bot 🏓", inline: true},
 			{name: "/server", value: "Fetches server information 📊", inline: true},
@@ -22,6 +23,8 @@ module.exports = {
 			{name: "/help", value: "This message! 📋", inline: true},
 			{name: "/kick", value: `"Kick" someone... 🥾`, inline: true},
 			{name: "/prune", value: `Prune up to 99 messages. 🗑️`, inline: true},
+			{name: "/embed-maker", value: `Make a customized embed! (Requires Manage Server permission) 🖨️`, inline: true},
+			{name: "---------------------------------------------------------", value: `\n----------------------------------------------------------`, },
 			{name: "Attributions", value: `Base code for commands thanks to Discordjs.guide`},
 			{name: "Attributions", value: `Based off of dumprr/Sentaku git repo`}
 		)
