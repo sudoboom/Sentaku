@@ -7,14 +7,17 @@ module.exports = {
 	async execute(interaction) {
 		// interaction.user is the object representing the User who ran the command
 		// interaction.member is the GuildMember object, which represents the user in the specific guild
+		let ServerCount = await interaction.client.guilds.cache.size
 		const HelpEmbed = new EmbedBuilder()
 		.setAuthor({
 			url: `https://github.com/dumprr/Sentaku`,
 			name: 'dumprr/Sentaku '
 		})
 		.setColor('Orange')
-		.setTitle('Commands List')
+		.setTitle('Sentaku Commands + More')
 		.addFields(
+			{name: "---------------------------------------------------------", value: `\n----------------------------------------------------------`, },
+			{name: "Server Count", value: `${ServerCount}`, inline: true},
 			{name: "---------------------------------------------------------", value: `\n----------------------------------------------------------`, },
 			{name: "/avatar", value: "Fetches user's avatar, either their own or someone else's 🖼️", inline: true},
 			{name: "/ping", value: "Gets the ping of the bot 🏓", inline: true},
@@ -25,7 +28,6 @@ module.exports = {
 			{name: "/prune", value: `Prune up to 99 messages. 🗑️`, inline: true},
 			{name: "/embed-maker", value: `Make a customized embed! (Requires Manage Server permission) 🖨️`, inline: true},
 			{name: "---------------------------------------------------------", value: `\n----------------------------------------------------------`, },
-			{name: "Attributions", value: `Base code for commands thanks to Discordjs.guide`},
 			{name: "Attributions", value: `Based off of dumprr/Sentaku git repo`}
 		)
 	    .setFooter({

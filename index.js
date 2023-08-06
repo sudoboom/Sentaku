@@ -25,7 +25,7 @@ for (const folder of commandFolders) {
 
 client.once(Events.ClientReady, c => {
 	console.log(`Ready! Logged in as ${c.user.tag}`);
-	c.user.setActivity('for commands!', { type: ActivityType.Watching });
+	c.user.setActivity(`${client.guilds.cache.size} servers!`, { type: ActivityType.Watching });
 });
 
 

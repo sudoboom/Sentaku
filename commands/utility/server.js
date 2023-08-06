@@ -4,8 +4,9 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('server')
 		.setDescription('Provides information about the server.'),
-	async execute(interaction) {
+	async execute(interaction, client) {
 		// interaction.guild is the object representing the Guild in which the command was run
+		
 		
 		const ServerEmbed =  new EmbedBuilder()
 		.setColor('Aqua')
@@ -13,11 +14,15 @@ module.exports = {
 			url: `https://github.com/dumprr/Sentaku`,
 			name: 'dumprr/Sentaku'
 		})
-		.setTitle(`Server Info for ${interaction.guild.name}`)
-		.setDescription(`This server has ${interaction.guild.memberCount} members.\nOwner: <@${interaction.guild.ownerId}>`)
+		.setTitle(`${interaction.guild.name}`)
+		.setDescription(`Server Info!`)
+		.addFields(
+			{name: "Members", value: `${interaction.guild.memberCount}`, inline: true},
+			{name: "Owner", value: `<@${interaction.guild.ownerId}>`, inline: true},
+		)
 		if ( interaction.guild.iconURL() == null ) {
 		ServerEmbed.addFields(
-			{name: 'This server has no icon.', value: `The icon shows: "${interaction.guild.nameAcronym}"`}
+			{name: 'No Server Icon...', value: `The icon shows: "${interaction.guild.nameAcronym}"`}
 		)
 		}
 		ServerEmbed.setFooter( {
