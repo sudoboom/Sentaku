@@ -3,7 +3,8 @@
 ### If you use Sentaku, you must credit it as the open source base.
 ---
 # Bugs / To Add
--  All fixed! Report any bugs in issues.
+-  Embedmaker and Poll Maker currently needs to catch an error, the BitFieldInvalid error to return the "You cannot run this" message. To remedy this there should be a way to find if the user does or does not have the permission without throwing an error if not. 
+- Help command ping stuff weird
 ---
 # How To Set-up
 1. Go into your IDE and clone this git repository
