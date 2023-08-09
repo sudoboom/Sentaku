@@ -17,7 +17,7 @@ module.exports = {
 	
 		let ServerCount = await interaction.client.guilds.cache.size;
 		let memberCount = await interaction.client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0);
-		let botping = `${Date.now() - interaction.createdTimestamp}ms`;
+		// let botping = `${Date.now() - interaction.createdTimestamp}ms`;
 
 		const ButtonsRow = new ActionRowBuilder()
 		.addComponents(
@@ -39,7 +39,7 @@ module.exports = {
 			{name: "---------------------------------------------------------", value: `\n----------------------------------------------------------`, },
 			{name: "Server Count", value: `${ServerCount}`, inline: true},
 			{name: "Member Count", value: `${memberCount}`, inline: true},
-			{name: "Bot Latency", value: `${botping} (it's weird, will patch later)`, inline: true},
+			{name: "Bot Created At", value: `<t:${parseInt(interaction.client.user.createdAt / 1000)}:R>`, inline: true},
 			{name: "Uptime", value: `\`\`\`${uptime}\`\`\``},
 			{name: "---------------------------------------------------------", value: `\n----------------------------------------------------------`, },
 			{name: "/avatar", value: "Fetches user's avatar, either their own or someone else's 🖼️", inline: true},

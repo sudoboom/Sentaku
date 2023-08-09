@@ -20,7 +20,7 @@ module.exports = {
 				name: 'dumprr/Sentaku '
 			})
 	.setTitle(`User Info For ${user.username}`)
-	.setDescription(`They joined the server on ${member.joinedAt}`)
+	.setDescription(`They joined the server <t:${parseInt(member.joinedAt / 1000)}:R>\nThey made their account <t:${parseInt(user.createdAt / 1000)}:R>`)
 	if (user.avatarURL() != null ) {
 	EmbedThing.setThumbnail(`${user.avatarURL()}`)
 	}
@@ -40,7 +40,7 @@ module.exports = {
 				name: 'dumprr/Sentaku '
 			})
 	.setTitle(`User Info For ${interaction.user.username}`)
-	.setDescription(`They joined the server on ${interaction.member.joinedAt}`)
+	.setDescription(`They joined the server <t:${parseInt(interaction.member.joinedAt / 1000)}:R>\nThey made their account <t:${parseInt(interaction.user.createdAt / 1000)}:R>`)
 	if (interaction.user.avatarURL() != null ) {
 		SelfEmbed.setThumbnail(`${interaction.user.avatarURL()}`)
 	}

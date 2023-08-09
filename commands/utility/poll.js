@@ -45,7 +45,7 @@ module.exports = {
              const body = interaction.options.getString('question')
              const color = interaction.options.getString('color')
              const CustomEmbed = new EmbedBuilder() 
-             .setTitle(`Poll Time!`)
+             .setTitle(`Poll!`)
              .setDescription(`${body}`)
              .setColor(color)
              if (Emojis === 'Yesno') {

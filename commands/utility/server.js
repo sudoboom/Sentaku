@@ -19,6 +19,7 @@ module.exports = {
 		.addFields(
 			{name: "Members", value: `${interaction.guild.memberCount}`, inline: true},
 			{name: "Owner", value: `<@${interaction.guild.ownerId}>`, inline: true},
+			{name: "Creation Date", value: `<t:${parseInt(interaction.guild.createdAt / 1000)}:R>`}
 		)
 		if ( interaction.guild.iconURL() == null ) {
 		ServerEmbed.addFields(
